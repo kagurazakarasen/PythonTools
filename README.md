@@ -10,7 +10,7 @@ iOSのアプリ作る時に、異様に沢山のアイコン画像等を作ら�
 * csvファイルは単純に width,height を必要な行数分いれておけばおｋ
 
 ### 使い方
-> python3 resizeImgs.py <csvfile> <image.png>
+> python3 resizeImgs.py csvfile image.png
 
 * 結果は元のファイル名のimage〈width〉x〈height〉.png というファイル名で実行ディレクトリに保存されます。
 
