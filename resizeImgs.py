@@ -6,10 +6,14 @@ from PIL import Image, ImageFilter
 import csv
 import sys
 
-ImgFileName = 'd:/work/python/tools/PythonTools/test.png'
-CsvFileName = 'd:/work/python/tools/PythonTools/test.csv'
+ImgFileName = 'test.png'
+CsvFileName = 'test.csv'
 
-print(len(sys.argv))
+#print(len(sys.argv))
+
+if(len(sys.argv)==1):
+    print('Usage: > python3 resizeImgs.py risezeXY.csv inImage.png')
+    sys.exit()
 
 if(len(sys.argv)>1):
     CsvFileName = sys.argv[1]
