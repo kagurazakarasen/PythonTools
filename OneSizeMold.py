@@ -7,8 +7,8 @@ from PIL import Image, ImageFilter
 
 ReSize = (408,408)  # サイズ指定
 
-inFolder = 'd:/tmp/tmp/'    # 元画像入れてあるフォルダ
-outFolder = 'd:/tmp/tmp/'   # 変換後の画像が入るフォルダ
+inFolder = 'd:/tmp/inImages/'    # 元画像入れてあるフォルダ
+outFolder = 'd:/tmp/outImages/'   # 変換後の画像が入るフォルダ
 
 files = glob.glob( inFolder +'*')
 
