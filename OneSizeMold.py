@@ -1,21 +1,24 @@
 # フォルダ内の画像を同一サイズのpngファイルに一斉変換
+# https://note.nkmk.me/python-pillow-image-resize/ 　参考
+
+import os
 import glob
 from PIL import Image, ImageFilter
 
-ReSize = (350,350)  # サイズ指定
+ReSize = (408,408)  # サイズ指定
 
-Folder = 'd:/tmp/tmp/'
+inFolder = 'd:/tmp/tmp/'    # 元画像入れてあるフォルダ
+outFolder = 'd:/tmp/tmp/'   # 変換後の画像が入るフォルダ
 
-# jpgファイルをpng化    ※ただpngに変換して保存するだけ
-files = glob.glob(Folder+ "*.jpg")
-for file in files:
-    print(file)
-    im = Image.open(file)
-    pngFile = file[:-4]+'.png'
-    im.save(pngFile)
+files = glob.glob( inFolder +'*')
 
-files = glob.glob(Folder+ "*.png")
-for file in files:
-    print(file)
-
-
+for f in files:
+    try:
+        img = Image.open(f)
+        img_resize = img.resize(ReSize)
+        root, ext = os.path.splitext(f)
+        basename = os.path.basename(root)
+        st=str(ReSize[0])+'x'+str(ReSize[1])
+        img_resize.save(os.path.join(outFolder, basename + '_' + st +'.png'))
+    except OSError as e:
+        pass
