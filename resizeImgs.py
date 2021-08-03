@@ -12,7 +12,7 @@ CsvFileName = 'test.csv'
 #print(len(sys.argv))
 
 if(len(sys.argv)==1):
-    print('Usage: > python3 resizeImgs.py risezeXY.csv inImage.png')
+    print('Usage: > python3 ' + sys.argv[0] +  ' ReSizeXYlist.csv InImage.png')
     sys.exit()
 
 if(len(sys.argv)>1):
